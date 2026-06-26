@@ -1,4 +1,4 @@
-yamlbackend:
+backend:
   name: github
   repo: NADOMODO-lab/NORD-
   branch: main
