@@ -1,0 +1,47 @@
+yamlbackend:
+  name: github
+  repo: NADOMODO-lab/NORD-
+  branch: main
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "products"
+    label: "Products"
+    folder: "_products"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Brand", name: "brand", widget: "string" }
+      - { label: "Price (MAD)", name: "price", widget: "number" }
+      - { label: "Category", name: "category", widget: "select", options: ["Jeans", "T-Shirts", "Shirts", "Shorts", "Summer Wear", "New Arrivals"] }
+      - { label: "Color", name: "color", widget: "string" }
+      - { label: "Sizes Available", name: "sizes", widget: "string" }
+      - { label: "Product Image", name: "image", widget: "image", required: false }
+      - { label: "In Stock", name: "instock", widget: "boolean", default: true }
+      - { label: "New Arrival", name: "new", widget: "boolean", default: false }
+
+  - name: "offers"
+    label: "Offres / Promotions"
+    folder: "_offers"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Original Price (MAD)", name: "original_price", widget: "number" }
+      - { label: "Sale Price (MAD)", name: "sale_price", widget: "number" }
+      - { label: "Discount %", name: "discount", widget: "string" }
+
+  - name: "settings"
+    label: "Store Settings"
+    files:
+      - label: "Store Info"
+        name: "store"
+        file: "_data/store.json"
+        fields:
+          - { label: "WhatsApp Number", name: "whatsapp", widget: "string" }
+          - { label: "Store Address", name: "address", widget: "string" }
+          - { label: "Opening Hours", name: "hours", widget: "string" }
+          - { label: "Instagram Username", name: "instagram", widget: "string" }
